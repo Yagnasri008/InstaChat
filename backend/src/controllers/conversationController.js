@@ -1,4 +1,4 @@
-const Conversation = require("../models/Conversation");
+const Conversation = require("../models/conversation");
 
 const createConversation = async (req, res) => {
     try {
@@ -53,7 +53,6 @@ const createConversation = async (req, res) => {
     }
 };
 
-
 const getConversations = async (req, res) => {
     try {
         const userId = req.user.userId;
@@ -82,7 +81,6 @@ const getConversations = async (req, res) => {
         });
     }
 };
-
 
 module.exports = {
     createConversation,
