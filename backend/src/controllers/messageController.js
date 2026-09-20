@@ -1,5 +1,5 @@
 const Message = require("../models/Message");
-const Conversation = require("../models/Conversation");
+const Conversation = require("../models/conversation");
 
 const sendMessage = async (req, res) => {
     try {
@@ -20,7 +20,6 @@ const sendMessage = async (req, res) => {
             });
         }
 
-        // Make sure the sender belongs to this conversation
         const isParticipant = conversation.participants.some(
             (participant) => participant.toString() === senderId
         );
@@ -37,7 +36,6 @@ const sendMessage = async (req, res) => {
             content
         });
 
-        // Update the latest message in the conversation
         conversation.lastMessage = message._id;
         await conversation.save();
 
@@ -58,7 +56,6 @@ const sendMessage = async (req, res) => {
         });
     }
 };
-
 
 const getMessages = async (req, res) => {
     try {
