@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import API from "../services/api";
 import socket from "../services/socket";
-import "./Chat.css";
+import "./chat.css";
 
 console.log("🚨 CHAT JSX RUNNING 🚨");
 
